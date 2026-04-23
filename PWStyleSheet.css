@@ -1,0 +1,17 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: monospace;
+}
+
+.inputFieldText {
+    color: white;
+
+}
+#CmdInput {
+    border: none;
+    background: none;
+    color: white;
+    outline: none;
+    font-family: monospace;
+}
