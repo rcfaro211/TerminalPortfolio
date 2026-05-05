@@ -1,0 +1,24 @@
+body {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-family: monospace;
+}
+
+.inputFieldText {
+    color: white;
+
+}
+#CmdInput {
+    border: white 1px solid;
+    background: none;
+    color: white;
+    outline: none;
+    font-family: monospace;
+    margin-left: 5;
+    position: fixed;
+    width: 84%;
+    text-overflow: clip;
+}
+#CmdOutputField {
+    white-space: pre;
+}
