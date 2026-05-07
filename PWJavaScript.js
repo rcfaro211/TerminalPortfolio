@@ -170,7 +170,21 @@ cmdField.addEventListener("submit", function (event) {
 				input.focus();
 				return;
 			} else if (index === 1) {
-				console.log("Project 2");
+				const cmdOutput = document.createElement("div");
+				cmdOutput.className = "cmdOutputs";
+				cmdOutput.textContent = `${prefix} ${cmdInput}`;
+				outputField.appendChild(cmdOutput);
+				const project2 = document.createElement("div");
+				project2.className = "cmdOutputs";
+				project2.textContent = `Opening ${PROJECTLISTSTR[1]}`;
+				outputField.appendChild(project2);
+				window.open(
+					"https://github.com/rcfaro211/ToolBar",
+					"_blank",
+				);
+				input.value = "";
+				input.focus();
+				return;
 			}
 		}
 	}
@@ -182,3 +196,4 @@ cmdField.addEventListener("submit", function (event) {
 	input.value = "";
 	input.focus();
 });
+
