@@ -1,0 +1,71 @@
+:root {
+  --palette-1: #011627;
+  --palette-2: #07192a;
+  --palette-3: #0a2032;
+  --palette-4: #01121f;
+  --palette-5: #112639;
+  --palette-6: #021630;
+  --palette-7: #021423;
+  --palette-8: #182f42;
+  --palette-9: #253842;
+  --palette-10: #334250;
+  --palette-11: #404d5d;
+  --icon: #273f53;
+}
+
+
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.TUIBody {
+    background-color: var(--palette-4);
+    color: white;
+    font-family: monospace;
+
+}
+
+.inputFieldText {
+    color: rgb(255, 255, 255);
+
+}
+#CmdInput {
+    border: none;
+    background: none;
+    color: white;
+    outline: none;
+    font-family: monospace;
+    margin-left: 5;
+    position: absolute;
+    width: 94%
+}
+#CmdOutputField {
+    white-space: pre;
+}
+
+.GUIBody {
+    background-color: var(--palette-3);
+}
+.SideNav {
+    display: flex;
+    background-color: var(--palette-8);
+    align-items: flex-start;
+    flex-direction: column;
+    width: max-content;
+}
+.SideNav button{
+    background-color: var(--palette-3);
+    width: 30px;
+    padding: 1px; 
+    flex-direction: column;
+}
+
+
+.Icon {
+    fill: var(--icon);
+    
+}
