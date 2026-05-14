@@ -18,7 +18,7 @@ const COMMANDLIST = [
 	`LS      ${padding}Lists all available directories`,
 	`PROJECTS${padding}Show all of my projects`,
 ];
-const DIRECTORYLIST = ["ABOUT.TXT", "CREDITS.EXE", "EXPERIENCE.TXT", "GUI.EXE"];
+const DIRECTORYLIST = ["ABOUT.TXT", "CREDITS.TXT", "GUI.EXE"];
 const directory_List = DIRECTORYLIST.join("\n");
 const commands_List = COMMANDLIST.join("\n");
 const outputField = document.getElementById("cmdOutputField");
@@ -196,4 +196,3 @@ cmdField.addEventListener("submit", function (event) {
 	input.value = "";
 	input.focus();
 });
-

@@ -1,24 +1,178 @@
-body {
-    background-color: rgb(0, 0, 0);
-    color: white;
+:root {
+  --tab-active: #1e0f14;
+  --tab: #170b10;
+  --background: #1e0f14;
+  --topNav: #170b10;
+  --sideNav: #120810;
+  --text-hover: #f0d0dc;
+  --text-active: #f0d0dc;
+  --text: #f0d0dc;
+  --icon: #6b5862;
+  --icon-hover: #f0d0dc;
+  --border: #835766;
+  --explorer-bg: #170b10;
+}
+
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+.TUIBody {
+    background-color: var(--background);
+    color: var(--text);
     font-family: monospace;
+
 }
 
 .inputFieldText {
-    color: white;
+    color: var(--text);
 
 }
 #CmdInput {
-    border: white 1px solid;
+    border: none;
     background: none;
-    color: white;
+    color: var(--text);
     outline: none;
     font-family: monospace;
     margin-left: 5;
-    position: fixed;
-    width: 84%;
-    text-overflow: clip;
+    position: absolute;
+    width: 94%
 }
 #CmdOutputField {
     white-space: pre;
+}
+
+.GUIBody {
+    background-color: var(--background);
+}
+.SideNav {
+    display: flex;
+    background-color: var(--sideNav);
+    border-right: 1px solid var(--border);
+    padding-right: 15px;
+    padding-left: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+    width: max-content;
+    gap: 13px;
+    height: 100%;
+}
+.SideNav button{
+    background-color: var(--sideNav);
+    width: 30px;
+    padding: 1px; 
+    flex-direction: column;
+    border-style: none;
+}
+.icon {
+    fill: var(--icon);
+    transition: fill 0.2s ease-in-out;
+}
+.hover {
+    fill: var(--icon-hover);
+}
+.NavItem {
+    position: relative;
+    display: inline-block;
+
+}
+.NavItem .ToolTip {
+    visibility: hidden;
+    width: max-content;
+    background-color: var(--background);
+    color: var(--text);
+    text-align: left;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    padding: 10px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 1%;
+    left: 130%;
+    margin-bottom: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.NavItem .ToolTip::before {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 40%;
+  border-width: 7px 7px 7px 0;
+  border-style: solid;
+  border-color: transparent var(--border) transparent transparent;
+  z-index: -1;
+}
+.NavItem .ToolTip::after {
+  content: "";
+  position: absolute;
+  right: 99%;
+  top: 40%;
+
+  border-width: 6px 6px 6px 0;
+  border-style: solid;
+  border-color: transparent var(--background) transparent transparent;
+}
+.NavItem:hover .ToolTip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.topNav {
+    margin-left: 55px;
+    display: flex;
+    background-color: var(--topNav);
+    border-bottom: 1px solid var(--border);
+    padding: 10px;
+    align-items: left;
+    gap: 20px;
+}
+.explorer {
+    display: none; 
+    position: absolute;
+    padding: 5px 10px 0px 10px;
+    top: 28px;
+    left: 63px;
+    width: 25%;
+    max-width: 25%;
+    height: 100%;
+    background-color: var(--explorer-bg);
+    border: 1px solid var(--border);
+}
+.fileList {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    flex-wrap: nowrap;
+}
+.fileName {
+    color: var(--text);
+    font-size: 16px;
+    cursor: pointer;
+}
+.fileTitle {
+    color: var(--text);
+    position: absolute;
+    left: 40%;
+    bottom: 92%;
+    background-color: var(--background);
+
+}
+.github {
+    display: none; 
+    position: absolute;
+    padding: 5px 10px 0px 10px;
+    top: 28px;
+    left: 63px;
+    width: 25%;
+    height: 100%;
+    background-color: var(--explorer-bg);
+    border: 1px solid var(--border);
+}
+.ghText {
+    color: var(--text);
+    font-size: 16px;
 }
