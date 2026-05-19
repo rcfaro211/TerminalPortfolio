@@ -10,11 +10,19 @@
 			type="text/css" />
 		<style type="text/css"></style>
 	</head>
-	<body class="GUIBody">
-		<div class="topNav"></div>
+	<body>
+		<div class="topNav">
+			<span
+				id="chosenFile"
+				class="tab"
+				>Home</span
+			>
+		</div>
 		<div class="SideNav">
 			<div class="NavItem">
-				<button id="explorer">
+				<button
+					id="explorer"
+					class="sideBtn">
 					<svg
 						class="icon"
 						xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +35,9 @@
 				</button>
 			</div>
 			<div class="NavItem">
-				<button id="Github">
+				<button
+					id="github"
+					class="sideBtn">
 					<svg
 						class="icon"
 						xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +55,9 @@
 				</button>
 			</div>
 			<div class="NavItem">
-				<button id="Socials">
+				<button
+					id="socials"
+					class="sideBtn">
 					<svg
 						class="icon"
 						xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +70,9 @@
 				</button>
 			</div>
 			<div class="NavItem">
-				<button id="Terminal">
+				<button
+					id="terminal"
+					class="sideBtn">
 					<svg
 						class="icon"
 						xmlns="http://www.w3.org/2000/svg"
@@ -71,51 +85,48 @@
 				</button>
 			</div>
 		</div>
-		<div
-			class="explorer"
-			id="sideBar">
-			<div class="fileList">
-				<div
-					class="fileName"
-					id="file1">
-					<span id="file1"></span>
-				</div>
-				<div
-					class="fileName"
-					id="file2">
-					<span id="file2"></span>
-				</div>
-				<div
-					class="fileName"
-					id="file3">
-					<span id="file3"></span>
-				</div>
-				<div
-					class="fileName"
-					id="file4">
-					<span id="file4"></span>
-				</div>
-				<div
-					class="fileName"
-					id="file5">
-					<span id="file5"></span>
+		<div id="body">
+			<div
+				class="sideBar"
+				id="explorerSideBar">
+				<div class="fileList">
+					<div
+						class="fileName"
+						id="file1">
+						<span id="file1"></span>
+					</div>
+					<div
+						class="fileName"
+						id="file2">
+						<span id="file2"></span>
+					</div>
+					<div
+						class="fileName"
+						id="file3">
+						<span id="file3"></span>
+					</div>
+					<div
+						class="fileName"
+						id="file4">
+						<span id="file4"></span>
+					</div>
+					<div
+						class="fileName"
+						id="file5">
+						<span id="file5"></span>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="filePage">
-			<div class="fileTitle">
-				<span id="chosenFile">Lorem ipsum dolor sit amet.</span>
+			<div class="filePage">
+				<span id="openedFile"></span>
 			</div>
-			<div class="fileBody"><span id="openedFile">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure unde tenetur modi. Iusto, nisi. Laboriosam delectus mollitia provident, dolorem ea fugit odit aut nobis iusto minima voluptates eius quod fuga nihil natus ab veritatis, ipsa porro. Animi, non impedit numquam qui earum, voluptatibus nisi soluta autem, aut doloribus ab iusto?</span></div>
-		</div>
-		<div
-			class="github"
-			id="sideBar">
-			<div class="ghText">
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-				atque commodi quas quae quam ut quos eum, provident sit, veniam
-				voluptates numquam culpa excepturi tempore vitae? Nemo sunt
-				eligendi facilis.
+			<div
+				class="sideBar"
+				id="githubSideBar"><button class="gitBTN" id="gitBTN">Go to My Github Page</button><p>To view a list of all my projects, click here</p></div>
+			<div
+				class="sideBar"
+				id="socialsSideBar">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, dolor?
 			</div>
 		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
