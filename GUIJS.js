@@ -9,7 +9,7 @@ $(document).ready(function () {
 	);
 	let sideBarOpen = false;
 	let snTab = null;
-
+	let fileSVG = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#c5c5c5" d="M1.5 14h11l.48-.37 2.63-7-.48-.63H14V3.5l-.5-.5H7.71l-.86-.85L6.5 2h-5l-.5.5v11zM2 3h4.29l.86.85.35.15H13v2H8.5l-.35.15-.86.85H3.5l-.47.34-1 3.08zm10.13 10H2.19l1.67-5H7.5l.35-.15.86-.85h5.79z"/></svg>`;
 	$(".sideBtn").click(function (e) {
 		e.preventDefault();
 		snTab = this.id;
@@ -19,9 +19,11 @@ $(document).ready(function () {
 		sideBarOpen = currentSideBar.is(":visible");
 		console.log(snTab);
 		if (sideBarOpen) {
-			$(".filePage").css("padding-left", "200px");
+			$(".filePage").css("padding-left", "150px");
+			$(".filePage").css("width", "95%");
 		} else {
-			$(".filePage").css("padding-left", "50px");
+			$(".filePage").css("padding-left", "0px");
+			$(".filePage").css("width", "100%");
 		}
 	});
 
@@ -30,34 +32,41 @@ $(document).ready(function () {
 	let file1 = document.getElementById("file1");
 	let file2 = document.getElementById("file2");
 	let file3 = document.getElementById("file3");
-	let file4 = document.getElementById("file4");
-	let file5 = document.getElementById("file5");
+	const projectDisplay = $("#projectsDisplay");
 	let chosenFile = null;
 
 	let file1Content = "Resume.pdf";
 	let file2Content = "AboutMe.txt";
-	let file3Content = "Projects.zip";
+	let projectsWindow = "Projects";
 
-	let fileContent = [file1Content, file2Content, file3Content];
-	let fileNum = null;
+	let fileContent = ["This would be where my resume would be if I remembered where I put it", "This would be a page about my expirience with work, coding, etc.", projectsWindow];
+	let fileNum = Number(null);
+
+
 
 	file1.textContent = "Resume.pdf";
 	file2.textContent = "AboutMe.txt";
 	file3.textContent = "Projects.zip";
+	
 
 	$(".fileName").click(function (e) {
 		e.preventDefault();
 		chosenFile = this.id;
 		console.log(`File opened: ${chosenFile}`);
-		fileNum = Number(this.id.replace(/file/i, ""));
+		fileNum = this.id.replace(/file/i, "") - 1;
 		console.log(`File Number set to: ${fileNum}`);
+		if (fileNum === 2) {
+			$(".projectsDisplay").show();
+			console.log(`Project window open: ${projectDisplay.is(":visible")}`)
+		} else {
+			$(".projectsDisplay").hide();
+		}
 		$("#chosenFile").text(chosenFile);
-		$("#openedFile").text(fileContent[fileNum - 1]);
-		console.log(`${fileContent[fileNum - 1]}`);
+		$("#openedFile").text(fileContent[fileNum]);
 	});
-	$(".gitBTN").click(function (e) { 
+	$(".gitBTN").click(function (e) {
 		e.preventDefault();
-		window.open("https://github.com/rcfaro211", "_blank")
-		
+		window.open("https://github.com/rcfaro211", "_blank");
 	});
+
 });
