@@ -1,7 +1,7 @@
 :root {
 	--tab-active: #1e0f14;
 	--tab: #170b10;
-    --tab-border: #252526;
+	--tab-border: #252526;
 	--background: #1e0f14;
 	--topNav: #170b10;
 	--sideNav: #120810;
@@ -14,7 +14,6 @@
 	--explorer-bg: #170b10;
 	--button: #7a1530;
 	--button-hover: #b87890;
-	 
 }
 
 ::-webkit-scrollbar {
@@ -47,6 +46,9 @@
 body {
 	margin: 0;
 	padding: 0;
+	background-color: var(--background);
+	color: var(--text);
+
 }
 
 .SideNav {
@@ -131,12 +133,12 @@ body {
 	top: 0;
 	left: 0;
 	right: 0;
-    padding-bottom: 5px;
-    margin-left: 50px;
+	padding-bottom: 5px;
+	margin-left: 50px;
 	background-color: var(--topNav);
 	border-bottom: 1px solid var(--border);
 	align-items: center;
-    justify-content: center;
+	justify-content: center;
 	z-index: 5;
 }
 .tab {
@@ -144,24 +146,29 @@ body {
 	z-index: 5;
 }
 #body {
-	margin-left: 50px; /* space for SideNav */
-	margin-top: 20px; /* space for topNav */
+	margin-left: 50px;
+	margin-top: 20px;
 
 	width: calc(100vw - 50px);
 	height: calc(100vh - 20px);
 
 	background-color: var(--background);
 
+	
 	position: relative;
 	z-index: 0;
+
+	overflow-x: hidden;
+	box-sizing: border-box;
 }
 .sideBar {
 	display: none;
-    position: inherit;
+	position: fixed;
 	padding: 5px 10px 0px 10px;
-	width: 25%;
-	max-width: 25%;
-	height: calc(100vh - 27px);
+	width: 20%;
+	max-width: 130px;
+	min-width: 100px;
+	height: calc(100%);
 	background-color: var(--explorer-bg);
 	border: 1px solid var(--border);
 	float: left;
@@ -180,15 +187,51 @@ body {
 }
 .filePage {
 	color: var(--text);
-	position: absolute;
+	position: relative;
 	padding-top: 20px;
 	z-index: 1;
+
+	height: 100%;
 }
 .fileTitle {
 	color: var(--text);
 }
 
-.gitBTN {
+.projectsGrid {
+	margin-left: 30px;
+	margin-top: 20px;
+	display: grid;
+	gap: 20px;
+	width: 95%;
+	overflow: visible;
+	grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+
+}
+
+.projectsDisplay {
+	display: none;
+	width: 95%;
+	height: 80vh;
+	border: none;
+}
+	
+.gridItem {
+	border: 1px solid var(--border);
+	border-radius: 5px;
+	aspect-ratio: 1 / 1;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	overflow: hidden;
+	cursor: pointer;
+}
+#githubSideBar p {
+	color: var(--text);
+	font-family: Arial, Helvetica, sans-serif;
+}
+#githubSideBar button {
 	color: var(--text);
 	background: var(--button);
 	border-color: var(--button);
@@ -200,6 +243,6 @@ body {
 	margin-top: 10px;
 	cursor: pointer;
 }
-.gitBTN:hover {
+#githubSideBar button:hover {
 	background: var(--button-hover);
 }
