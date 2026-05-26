@@ -12,19 +12,33 @@ $(document).ready(function () {
 	let fileSVG = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#c5c5c5" d="M1.5 14h11l.48-.37 2.63-7-.48-.63H14V3.5l-.5-.5H7.71l-.86-.85L6.5 2h-5l-.5.5v11zM2 3h4.29l.86.85.35.15H13v2H8.5l-.35.15-.86.85H3.5l-.47.34-1 3.08zm10.13 10H2.19l1.67-5H7.5l.35-.15.86-.85h5.79z"/></svg>`;
 	$(".sideBtn").click(function (e) {
 		e.preventDefault();
+
 		snTab = this.id;
 		const currentSideBar = $(`#${snTab}SideBar`);
-		currentSideBar.toggle();
-		$(`.sideBar`).not(currentSideBar).hide();
-		sideBarOpen = currentSideBar.is(":visible");
-		console.log(snTab);
-		if (sideBarOpen) {
-			$(".filePage").css("padding-left", "150px");
-			$(".filePage").css("width", "95%");
+
+		// Check if current sidebar is already open
+		const isOpen = currentSideBar.is(":visible");
+
+		// Hide all sidebars first
+		$(".sideBar").hide();
+
+		if (!isOpen) {
+			// Open selected sidebar
+			currentSideBar.show();
+
+			$(".filePage").css({
+				"padding-left": "150px",
+				width: "95%",
+			});
 		} else {
-			$(".filePage").css("padding-left", "0px");
-			$(".filePage").css("width", "100%");
+			// Reset layout if closing
+			$(".filePage").css({
+				"padding-left": "0px",
+				width: "100%",
+			});
 		}
+
+		console.log(snTab);
 	});
 
 	const PROJECTLISTSTR = ["Terminal Style Portfolio", "CLI Toolkit (WIP)"];
@@ -39,34 +53,42 @@ $(document).ready(function () {
 	let file2Content = "AboutMe.txt";
 	let projectsWindow = "Projects";
 
-	let fileContent = ["This would be where my resume would be if I remembered where I put it", "This would be a page about my expirience with work, coding, etc.", projectsWindow];
+	let fileContent = [
+		"This would be where my resume would be if I remembered where I put it",
+		"This would be a page about my expirience with work, coding, etc.",
+		projectsWindow,
+	];
 	let fileNum = Number(null);
-
-
 
 	file1.textContent = "Resume.pdf";
 	file2.textContent = "AboutMe.txt";
 	file3.textContent = "Projects.zip";
-	
+
+	const fileTitles = ["Resume", "About Me", "Projects Folder"];
 
 	$(".fileName").click(function (e) {
 		e.preventDefault();
+
 		chosenFile = this.id;
-		console.log(`File opened: ${chosenFile}`);
 		fileNum = this.id.replace(/file/i, "") - 1;
+
+		console.log(`File opened: ${chosenFile}`);
 		console.log(`File Number set to: ${fileNum}`);
+
 		if (fileNum === 2) {
-			$(".projectsDisplay").show();
-			console.log(`Project window open: ${projectDisplay.is(":visible")}`)
+			projectDisplay.show();
+			console.log(
+				`Project window open: ${projectDisplay.is(":visible")}`,
+			);
 		} else {
-			$(".projectsDisplay").hide();
+			projectDisplay.hide();
 		}
-		$("#chosenFile").text(chosenFile);
+
+		$("#chosenFile").text(fileTitles[fileNum]);
 		$("#openedFile").text(fileContent[fileNum]);
 	});
 	$(".gitBTN").click(function (e) {
 		e.preventDefault();
 		window.open("https://github.com/rcfaro211", "_blank");
 	});
-
 });
