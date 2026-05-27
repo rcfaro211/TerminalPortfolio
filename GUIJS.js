@@ -91,4 +91,10 @@ $(document).ready(function () {
 		e.preventDefault();
 		window.open("https://github.com/rcfaro211", "_blank");
 	});
+	$(".TuiBtn").click(function (e) { 
+		e.preventDefault();
+		window.location.href = "TerminalPage.html"
+		
+		
+	});
 });
