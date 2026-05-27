@@ -123,6 +123,23 @@ cmdField.addEventListener("submit", function (event) {
 		return;
 	}
 	//}
+	if (cmdInput === "GUI" || cmdInput === "GUI.EXE") {
+		window.location.href = "GuiPage.html";
+		return
+	}
+	if (cmdInput === "ABOUT.TXT" || cmdInput === "ABOUT") {
+		const cmdOutput = document.createElement("div");
+		cmdOutput.className = "cmdOutputs";
+		cmdOutput.textContent = `${prefix} ${cmdInput}`;
+		outputField.appendChild(cmdOutput);
+		const aboutMe = document.createElement("div");
+		aboutMe.className = "cmdOutputs";
+		aboutMe.textContent = `${prefix} This is where an about me page would go if I made one`;
+		outputField.appendChild(aboutMe);
+		input.value = "";
+		input.focus();
+		return
+	}
 	//{ Project command
 	if (cmdInput === "PROJECTS -H" || cmdInput === "PROJECTS") {
 		const cmdOutput = document.createElement("div");
