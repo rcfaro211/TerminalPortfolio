@@ -6,11 +6,11 @@ $(document).ready(function () {
 		["1", `https://github.com/rcfaro211/ToolBar`],
 	]);
 	for (let i = 0; i < PROJECTLISTSTR.length; i++) {
-		$(".projectsGrid").append(
-			`<div class="gridItem" id="${i}">${fileSVG}<p>${PROJECTLISTSTR[i]}</p></div>`,
+		$(".projectsTable").append(
+			`<div class="tableItem" id="${i}">${fileSVG}<p>${PROJECTLISTSTR[i]}</p></div>`,
 		);
 	}
-	$(".gridItem").click(function (e) {
+	$(".tableItem").click(function (e) {
 		e.preventDefault();
 		console.log(`Open: ${projects.get(`${this.id}`)}`);
 		window.open(`${projects.get(this.id)}`, "_blank");
