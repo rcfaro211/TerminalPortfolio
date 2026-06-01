@@ -5,7 +5,7 @@
 	--background: #1e0f14;
 	--topNav: #170b10;
 	--sideNav: #120810;
-	--text-hover: #f0d0dc;
+	--text-hover: #b87890;
 	--text-active: #f0d0dc;
 	--text: #f0d0dc;
 	--icon: #6b5862;
@@ -51,9 +51,11 @@ body {
 	padding: 0;
 	background-color: var(--background);
 	color: var(--text);
-	
-
 }
+.highlight {
+	color: var(--button);
+}
+
 a {
 	color: white;
 }
