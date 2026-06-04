@@ -14,6 +14,7 @@
 	--explorer-bg: #170b10;
 	--button: #7a1530;
 	--button-hover: #b87890;
+	--fontSize: 15px;
 }
 
 ::-webkit-scrollbar {
@@ -60,6 +61,7 @@ body {
 	padding: 0;
 	background-color: var(--background);
 	color: var(--text);
+	font-family: monospace;
 }
 .highlight {
 	color: var(--button);
@@ -92,6 +94,7 @@ a {
 	border-right: 1px solid var(--border);
 	padding-right: 10px;
 	padding-left: 10px;
+	padding-top: 25px;
 	align-items: flex-start;
 	flex-direction: column;
 	width: max-content;
@@ -124,7 +127,7 @@ a {
 	color: var(--text);
 	text-align: left;
 	border-radius: 6px;
-	border: 5px solid var(--border);
+	border: 2px solid var(--border);
 	padding: 10px 0;
 	position: absolute;
 	z-index: 1;
@@ -216,7 +219,7 @@ a {
 	border: 3px solid;
 	border-color: var(--border);
 }
-.projectsDisplay {
+.pageDisplay {
 	display: none;
 	width: 100%;
 	height: 100%;
@@ -229,7 +232,7 @@ a {
 	border-radius: 5px;
 	display: table-cell;
 	cursor: pointer;
-	width: 500px;
+	width: 25%;
 }
 #githubSideBar p {
 	color: var(--text);
@@ -256,27 +259,40 @@ a {
 #socialsSideBar {
 	min-width: max-content;
 }
-
+.title {
+	font-family: monospace;
+	color: var(--text);
+	font-size: 35px;
+}
+.text {
+	font-size: var(--fontSize) ;
+	font-family: monospace;
+}
 @media (max-width: 600px) {
 	.TUIBody {
 		font-size: 30px;
 		background-size: 1000px;
-		background-position-y: 25vh; 
+		background-position-y: 25vh;
 	}
+
 	#CmdInput {
 		font-size: 30px;
 	}
+
 	body {
 		font-size: 30px;
 	}
+
 	.SideNav {
 		padding-left: 2%;
 		padding-right: 2%;
 		gap: 5vh;
 	}
+
 	.SideNav button {
 		width: 9vw;
 	}
+
 	.NavItem .ToolTip {
 		font-size: 35px;
 		border-width: 4px;
@@ -284,15 +300,18 @@ a {
 		padding: 15px 0;
 		margin: 10px;
 	}
+
 	.sideBar {
-		padding:  15px 20px 0 100px;
+		padding: 15px 20px 0 100px;
 		font-size: 35px;
 		max-width: max-content;
 		min-width: min-content;
 	}
+
 	#socialsSideBar {
 		font-size: 30px;
 	}
+
 	#githubSideBar button {
 		font-size: 30px;
 	}

@@ -46,25 +46,29 @@ $(document).ready(function () {
 	let file1 = document.getElementById("file1");
 	let file2 = document.getElementById("file2");
 	let file3 = document.getElementById("file3");
+	let file4 = document.getElementById("file4");
+	const aboutDisplay = $("#aboutDisplay");
 	const projectDisplay = $("#projectsDisplay");
 	let chosenFile = null;
 
 	let file1Content = "Resume.pdf";
 	let file2Content = "AboutMe.txt";
 	let projectsWindow = "Projects";
+	let aboutPage = "";
 
 	let fileContent = [
 		"This would be where my resume would be if I remembered where I put it",
 		"This would be a page about my expirience with work, coding, etc.",
 		projectsWindow,
+		aboutPage,
 	];
 	let fileNum = Number(null);
 
 	file1.textContent = "Resume.pdf";
 	file2.textContent = "AboutMe.txt";
 	file3.textContent = "Projects.zip";
-
-	const fileTitles = ["Resume", "About Me", "Projects Folder"];
+	file4.textContent = "AboutPage.html"
+	const fileTitles = ["Resume", "About Me", "Projects Folder", "About"];
 
 	$(".fileName").click(function (e) {
 		e.preventDefault();
@@ -83,6 +87,12 @@ $(document).ready(function () {
 		} else {
 			projectDisplay.hide();
 		}
+		if (fileNum === 3 ) {
+			aboutDisplay.show();
+			console.log(`About page open: ${aboutDisplay.is(":visible")}`)
+		} else {
+			aboutDisplay.hide();
+		}
 
 		$("#chosenFile").text(fileTitles[fileNum]);
 		$("#openedFile").text(fileContent[fileNum]);
@@ -99,7 +109,6 @@ $(document).ready(function () {
 		e.preventDefault();
 		$(".home").hide();
 		$("#chosenFile").text("About");
-		$("#openedFile").text(`This project is for my web page design class. My first idea was to make a website for one of my dad's companies, but he never gave me any information for it. I decided on a portfolio, but if it was a regular portfolio, that would be boring. Since it was going to showcase my coding projects, I thought, "Why not make it terminal-themed?" Then I realized that for the project, I needed to actually have clickable functions, so I made a VS Code-themed GUI instead.`);
-		
+		$("#aboutDisplay").show();
 	});
 });
