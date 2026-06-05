@@ -272,6 +272,9 @@ a {
 	font-size: var(--fontSize) ;
 	font-family: monospace;
 }
+.openPage {
+	display: ;
+}
 @media (max-width: 600px) {
 	.TUIBody {
 		font-size: 30px;
