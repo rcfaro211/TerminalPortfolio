@@ -189,7 +189,7 @@ a {
 	float: left;
 	z-index: 10;
 }
-.fileList {
+#fileList {
 	display: flex;
 	flex-direction: column;
 	gap: 2px;
@@ -233,6 +233,10 @@ a {
 	display: table-cell;
 	cursor: pointer;
 	width: 25%;
+	font-size: var(--text);
+}
+.fileContent {
+	display: none;
 }
 #githubSideBar p {
 	color: var(--text);

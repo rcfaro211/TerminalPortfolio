@@ -17,6 +17,7 @@ const COMMANDLIST = [
 	`GIT     ${padding}Opens my personal GitHub page`,
 	`LS      ${padding}Lists all available directories`,
 	`PROJECTS${padding}Show all of my projects`,
+	`GUI	 ${padding}Open the GUI version`,
 ];
 const DIRECTORYLIST = ["ABOUT.TXT", "CREDITS.TXT", "GUI.EXE"];
 const directory_List = DIRECTORYLIST.join("\n");
