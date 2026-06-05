@@ -16,22 +16,18 @@ $(document).ready(function () {
 		snTab = this.id;
 		const currentSideBar = $(`#${snTab}SideBar`);
 
-		// Check if current sidebar is already open
 		const isOpen = currentSideBar.is(":visible");
 
-		// Hide all sidebars first
-		$(".sideBar").hide();
+		$(".sideBar").hide("10");
 
 		if (!isOpen) {
-			// Open selected sidebar
-			currentSideBar.show();
+			currentSideBar.show("10");
 
 			$(".filePage").css({
 				"padding-left": "150px",
 				width: "95%",
 			});
 		} else {
-			// Reset layout if closing
 			$(".filePage").css({
 				"padding-left": "0px",
 				width: "100%",
@@ -41,62 +37,7 @@ $(document).ready(function () {
 		console.log(snTab);
 	});
 
-	const PROJECTLISTSTR = ["Terminal Style Portfolio", "CLI Toolkit (WIP)"];
 
-	let file1 = document.getElementById("file1");
-	let file2 = document.getElementById("file2");
-	let file3 = document.getElementById("file3");
-	let file4 = document.getElementById("file4");
-	const aboutDisplay = $("#aboutDisplay");
-	const projectDisplay = $("#projectsDisplay");
-	let chosenFile = null;
-
-	let file1Content = "Resume.pdf";
-	let file2Content = "AboutMe.txt";
-	let projectsWindow = "Projects";
-	let aboutPage = "";
-
-	let fileContent = [
-		"This would be where my resume would be if I remembered where I put it",
-		"This would be a page about my expirience with work, coding, etc.",
-		projectsWindow,
-		aboutPage,
-	];
-	let fileNum = Number(null);
-
-	file1.textContent = "Resume.pdf";
-	file2.textContent = "AboutMe.txt";
-	file3.textContent = "Projects.zip";
-	file4.textContent = "AboutPage.html"
-	const fileTitles = ["Resume", "About Me", "Projects Folder", "About"];
-
-	$(".fileName").click(function (e) {
-		e.preventDefault();
-		$(".home").hide();
-		chosenFile = this.id;
-		fileNum = this.id.replace(/file/i, "") - 1;
-
-		console.log(`File opened: ${chosenFile}`);
-		console.log(`File Number set to: ${fileNum}`);
-
-		if (fileNum === 2) {
-			projectDisplay.show();
-			console.log(
-				`Project window open: ${projectDisplay.is(":visible")}`,
-			);
-		} else {
-			projectDisplay.hide();
-		}
-		if (fileNum === 3 ) {
-			aboutDisplay.show();
-			console.log(`About page open: ${aboutDisplay.is(":visible")}`)
-		} else {
-			aboutDisplay.hide();
-		}
-
-		$("#chosenFile").text(fileTitles[fileNum]);
-		$("#openedFile").text(fileContent[fileNum]);
-	});
 	$(".gitBTN").click(function (e) {
 		e.preventDefault();
 		window.open("https://github.com/rcfaro211", "_blank");

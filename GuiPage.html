@@ -10,6 +10,13 @@
 			rel="stylesheet"
 			type="text/css" />
 		<style type="text/css"></style>
+		<script
+			src="https://unpkg.com/react@18/umd/react.development.js"
+			crossorigin></script>
+		<script
+			src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+			crossorigin></script>
+		<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 	</head>
 	<body>
 		<div class="topNav">
@@ -90,27 +97,7 @@
 			<div
 				class="sideBar"
 				id="explorerSideBar">
-				<div class="fileList">
-					<div
-						class="fileName"
-						id="file1">
-						<span id="file1"></span>
-					</div>
-					<div
-						class="fileName"
-						id="file2">
-						<span id="file2"></span>
-					</div>
-					<div
-						class="fileName"
-						id="file3">
-						<span id="file3"></span>
-					</div>
-					<div
-						class="fileName"
-						id="file4">
-						<span id="file4"></span>
-					</div>
+				<div id="fileList">
 				</div>
 			</div>
 			<div
@@ -146,7 +133,7 @@
 					(I will probably add more to this list)
 				</div>
 			</div>
-			<div class="filePage">
+			<div class="filePage" id="fc">
 				<div class="home">
 					<svg
 						style="z-index: 1; position: fixed"
@@ -181,6 +168,7 @@
 					frameborder="0"></iframe>
 			</div>
 		</div>
+		<script type="text/babel" src="GUIJSX.js" defer></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 		<script
 			src="GUIJS.js"
