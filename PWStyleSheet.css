@@ -198,6 +198,17 @@ a {
 .fileName {
 	color: var(--text);
 	cursor: pointer;
+	background: none;
+}
+.fileName button {
+	background: none;
+	color: var(--text);
+	border: none;
+	font-family: monospace;
+	cursor: pointer;
+}
+.fileName :hover {
+	color: var(--text-hover)
 }
 .filePage {
 	color: var(--text);
@@ -273,7 +284,7 @@ a {
 	font-family: monospace;
 }
 .openPage {
-	display: ;
+	display: block;
 }
 @media (max-width: 600px) {
 	.TUIBody {

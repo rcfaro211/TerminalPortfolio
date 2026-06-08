@@ -6,6 +6,22 @@ let fileContent = [
 	"Projects",
 	"",
 ];
+let fcLst = new Map([
+	[0, "resume"],
+	[1, "aboutMe"],
+	[2, "projects"],
+	[3, "aboutPage"]
+])
+function PD_Iframe() {
+	return (
+		<iframe src="ProjectsPage.html" frameborder="0"></iframe>
+	)
+}
+function AP_Iframe() {
+	return (
+		<iframe src="About.html" frameborder="0"></iframe>
+	)
+}
 function Resume() {
 	return (
 		<div
@@ -42,22 +58,25 @@ function AboutPage() {
 		</div>
 	);
 }
-function File() {
+function File({ index }) {
 	return (
-		<div
-			className={`fileName`}
-			id={`file${(fileNum += 1)}`}>
-			<span id={`file${fileNum}`}>{filelist[fileNum]}</span>
+		<div className="fileName" id={`file${index}`}>
+			<button
+				id={`file${index}`}
+				onClick={() => fcEvent(index)}
+			>
+				{filelist[index]}
+			</button>
 		</div>
 	);
 }
+
 function FileList() {
 	return (
 		<section>
-			<File />
-			<File />
-			<File />
-			<File />
+			{filelist.map((_, index) => (
+				<File key={index} index={index} />
+			))}
 		</section>
 	);
 }
@@ -82,7 +101,8 @@ function Home() {
 				</div>
 				<button
 					id="openAbout"
-					className="bottomTitle">
+					className="bottomTitle"
+						onClick={() => fcEvent(3)}>
 					<h4>About</h4>
 				</button>
 			</div>
@@ -99,6 +119,13 @@ function Fc() {
 			<Home />
 		</div>
 	);
+}
+function fcEvent(page) {
+		$(".fileContent").hide();
+		$(".openPage").hide();
+		$(`#${fcLst.get(page)}`).show();
+
+	
 }
 const fl = ReactDOM.createRoot(document.getElementById("fileList"));
 const fc = ReactDOM.createRoot(document.getElementById("fileContent"));
