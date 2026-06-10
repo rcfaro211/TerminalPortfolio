@@ -215,6 +215,8 @@ a {
 	position: relative;
 	padding-top: 20px;
 	z-index: 1;
+	width: 100vw;
+	height: 100vh;
 
 	height: 100%;
 }
@@ -230,10 +232,21 @@ a {
 	border: 3px solid;
 	border-color: var(--border);
 }
-.pageDisplay {
+.fileContent {
 	display: none;
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
+}
+.fileContent iframe {
+	width: 90vw;
+	height: 90vh;
+	border: none;
+	display: block;
+}
+.pageDisplay {
+	width: 100vw;
+	height: 100vh;
+	border: none;
 }
 .fileImg {
 	width: 100%;
@@ -245,9 +258,6 @@ a {
 	cursor: pointer;
 	width: 25%;
 	font-size: var(--text);
-}
-.fileContent {
-	display: none;
 }
 #githubSideBar p {
 	color: var(--text);
@@ -283,9 +293,7 @@ a {
 	font-size: var(--fontSize) ;
 	font-family: monospace;
 }
-.openPage {
-	display: block;
-}
+
 @media (max-width: 600px) {
 	.TUIBody {
 		font-size: 30px;

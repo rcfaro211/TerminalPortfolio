@@ -14,12 +14,12 @@ let fcLst = new Map([
 ])
 function PD_Iframe() {
 	return (
-		<iframe src="ProjectsPage.html" frameborder="0"></iframe>
+		<iframe src="ProjectsPage.html" frameBorder="0" />
 	)
 }
 function AP_Iframe() {
 	return (
-		<iframe src="About.html" frameborder="0"></iframe>
+		<iframe src="About.html" frameBorder="0" />
 	)
 }
 function Resume() {
@@ -46,6 +46,9 @@ function Projects() {
 			id="projects"
 			className="fileContent">
 			<section>{fileContent[2]}</section>
+			<div className="pageDisplay" id="projectDisplay">
+				<PD_Iframe />
+			</div>
 		</div>
 	);
 }
@@ -55,6 +58,9 @@ function AboutPage() {
 			id="aboutPage"
 			className="fileContent">
 			<section>{fileContent[3]}</section>
+			<div className="pageDisplay" id="aboutDisplay">
+				<AP_Iframe />
+			</div>
 		</div>
 	);
 }
