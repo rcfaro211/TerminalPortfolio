@@ -35,7 +35,6 @@
 	background-position-x: center;
 	background-position-y: 50%;
 	background-size: 500px;
-	;
 }
 
 .inputFieldText {
@@ -55,30 +54,23 @@
 #CmdOutputField {
 	white-space: pre;
 }
-
 body {
 	margin: 0;
 	padding: 0;
 	background-color: var(--background);
 	color: var(--text);
 	font-family: monospace;
+	overflow: hidden;
+
 }
 .highlight {
 	color: var(--button);
 }
-
 a {
 	color: white;
 }
-.bottomText {
-	text-align: center;
-	position: relative;
-}
-.bottomTitle {
-	color: var(--text);
-	position: relative;
-	z-index: 2;
-}
+
+
 #openAbout {
 	background: none;
 	border: none;
@@ -137,12 +129,10 @@ a {
 	opacity: 0;
 	transition: opacity 0.3s;
 }
-
 .NavItem:hover .ToolTip {
 	visibility: visible;
 	opacity: 1;
 }
-
 .topNav {
 	display: flex;
 	position: fixed;
@@ -164,17 +154,15 @@ a {
 #body {
 	margin-left: 50px;
 	margin-top: 20px;
-
 	width: calc(100vw - 50px);
 	height: calc(100vh - 20px);
-
 	background-color: var(--background);
-
 	position: relative;
 	z-index: 0;
-
-	overflow-x: hidden;
 	box-sizing: border-box;
+	overflow: visible;
+	overflow-y: auto;
+	
 }
 .sideBar {
 	display: none;
@@ -215,10 +203,9 @@ a {
 	position: relative;
 	padding-top: 20px;
 	z-index: 1;
-	width: 100vw;
-	height: 100vh;
-
+	width: 100%;
 	height: 100%;
+	align-content: center start ;
 }
 .fileTitle {
 	color: var(--text);
@@ -293,6 +280,23 @@ a {
 	font-size: var(--fontSize) ;
 	font-family: monospace;
 }
+.Logo {
+	display: block;
+	margin: 0 auto;
+	width: 60%;
+	overflow: hidden;
+}
+.bottomText {
+	position: absolute;
+	top: 50%;
+	left: 52%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	text-align: center;
+}
+
+
+
 
 @media (max-width: 600px) {
 	.TUIBody {
